@@ -1,0 +1,76 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Trebuchet MS, Anime Inept, sans-serif;
+  font-weight: normal; 
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to left, #f7f7f7, #cacbdd);
+}
+
+.game-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.player-grid, .computer-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 50vh;
+  height: 50vh;
+}
+
+/*Buttons --- */
+
+.comp-but { 
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;;
+  width: auto;
+  margin-left: 25%;
+  text-align: center; 
+  vertical-align: middle;
+  margin-top: 10%;
+  padding: 10px 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  margin-top: 10%;
+}
+
+.buttons > button {
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 10px 10px;
+}
+
+.points {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center; 
+  vertical-align: middle; 
+  margin-bottom: 5%;
+}
+
+.grid-pic {
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  display: block;
+  border-radius: 50%;
+}
+
+.mid-elem > h2, .rButton {
+  display: flex;
+  text-align: center;
+  padding: 0px 60px;
+}
