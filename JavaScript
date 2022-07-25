@@ -1,0 +1,108 @@
+class Game {
+
+  constructor(playerImage, computerImage, playerPoints, computerPoints, vsText) {
+    this.playerImage = playerImage
+    this.computerImage = computerImage
+    this.playerPoints = playerPoints
+    this.computerPoints = computerPoints
+    this.score()
+    this.playerScore = 0
+    this.computerScore = 0
+    this.vsText = vsText
+  }
+
+  rock() {
+    this.player = 'rock'
+    this.playerImage.src = "whiteHandsRock.jpg"
+  }
+
+  paper() {
+    this.player = 'paper'
+    this.playerImage.src = "whiteHandsPaper.jpg"
+  }
+
+  sizzors() {
+    this.player = 'sizzors'
+    this.playerImage.src = "whiteHandsSizzors.jpg"
+  }
+
+  computerChoice() {
+
+    let options = ['rock', 'paper', 'sizzors'];
+    let choice = options[Math.floor(options.length * Math.random())];
+    this.computer = choice
+
+    if (this.computer === 'rock') {
+      this.computerImage.src = "blackHandsRock.jpg"
+    } else if (this.computer === 'paper') {
+      this.computerImage.src = "blackHandsPaper.jpg"
+    } else {
+      this.computerImage.src = "blackHandsSizzors.jpg"
+    }
+  }
+
+  score() {
+
+    if (this.player === 'rock' && this.computer === 'sizzors' || this.player === 'paper' && this.computer === 'rock' || this.player === 'sizzors' && this.computer === 'paper') {
+      this.playerScore++
+      console.log('You: ' + this.playerScore)
+      console.log('Computer: ' + this.computerScore)
+      this.playerPoints[this.playerScore - 1].style.color = "#FFFFFF"
+    } else if (this.computer === 'rock' && this.player === 'sizzors' || this.computer === 'paper' && this.player === 'rock' || this.computer === 'sizzors' && this.player === 'paper') {
+      this.computerScore++
+      console.log('You: ' + this.playerScore)
+      console.log('Computer: ' + this.computerScore)
+      this.computerPoints[this.computerScore - 1].style.color = "#FFFFFF"
+    } else {
+      return
+    }
+
+    if (this.playerScore === 5) {
+      vsText.innerText = "YOU WIN!"
+    } else if (this.computerScore === 5) {
+      vsText.innerText = "YOU LOOSE!"
+    }
+
+  }
+
+  reset() {
+    location.reload()
+  }
+
+}
+
+let playerImage = document.querySelector('#playerPic')
+let computerImage = document.querySelector('#computerPic')
+let playerPoints = document.querySelectorAll('#playerPoints')
+let computerPoints = document.querySelectorAll('#computerPoints')
+let vsText = document.querySelector('#vsText')
+
+const rockButton = document.querySelector('#rock')
+const paperButton = document.querySelector('#paper')
+const sizzorsButton = document.querySelector('#sizzors')
+const compButton = document.querySelector('#computer')
+const resetButton = document.querySelector('#resetButton')
+
+const game = new Game(playerImage, computerImage, playerPoints, computerPoints, vsText)
+
+rockButton.addEventListener('click', () => {
+  game.rock()
+  game.computerChoice()
+  game.score()
+})
+
+paperButton.addEventListener('click', () => {
+  game.paper()
+  game.computerChoice()
+  game.score()
+})
+
+sizzorsButton.addEventListener('click', () => {
+  game.sizzors()
+  game.computerChoice()
+  game.score()
+})
+
+resetButton.addEventListener('click', () => {
+  game.reset()
+})
