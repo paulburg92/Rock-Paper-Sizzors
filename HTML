@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROCK PAPER SIZZORS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="game-box">
+
+    <div class="player-grid">
+      <div class="points">
+        <div id="playerPoints">&#11044;</div>
+        <div id="playerPoints">&#11044;</div>
+        <div id="playerPoints">&#11044;</div>
+        <div id="playerPoints">&#11044;</div>
+        <div id="playerPoints">&#11044;</div>
+      </div>
+
+      <img class="grid-pic" id="playerPic" src="questionMark.jpg">
+      <div class="buttons">
+        <button class="rock-but" id="rock">ROCK</button>
+        <button class="paper-but" id="paper">PAPER</button>
+        <button class="sizz-but" id="sizzors">SIZZORS</button>
+      </div>
+
+    </div>
+
+    <div class="mid-elem">
+      <h2 id="vsText">VS</h2>
+      <button class="rButton" id="resetButton">Reset</button>
+    </div>
+
+    <div class="computer-grid">
+      <div class="points">
+        <div id="computerPoints">&#11044;</div>
+        <div id="computerPoints">&#11044;</div>
+        <div id="computerPoints">&#11044;</div>
+        <div id="computerPoints">&#11044;</div>
+        <div id="computerPoints">&#11044;</div>
+      </div>
+      <img class="grid-pic" id="computerPic" src="questionMark.jpg">
+      <div class="what">
+        <button class="comp-but" id="computer">COMPUTER</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+
+</html>
